@@ -22,13 +22,24 @@ public class VersionDTO extends DTO {
      */
     private Long id;
     /**
-     * 版本项目名称
+     * 版本仓库项目名称
      */
     private String name;
     /**
      * 版本实体项目全称代号
      */
     private String versionName;
+
+    /**
+     * 版本来源编码（仓库编码）
+     */
+    @Schema(description = "版本来源编码（仓库编码）")
+    private String sourceId;
+
+    /**
+     * 环境
+     */
+    private String environment;
     /**
      * 版本
      */

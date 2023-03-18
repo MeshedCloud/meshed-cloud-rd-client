@@ -1,11 +1,12 @@
 package cn.meshed.cloud.rd.deployment;
 
 import cn.meshed.cloud.rd.deployment.command.WarehouseAddCmd;
-import cn.meshed.cloud.rd.deployment.command.WarehouseImportCmd;
 import cn.meshed.cloud.rd.deployment.data.WarehouseDTO;
+import cn.meshed.cloud.rd.deployment.data.WarehouseSelectDTO;
 import cn.meshed.cloud.rd.deployment.query.WarehousePageQry;
 import com.alibaba.cola.dto.PageResponse;
 import com.alibaba.cola.dto.Response;
+import com.alibaba.cola.dto.SingleResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * <h1>仓库适配器</h1>
@@ -32,7 +34,7 @@ public interface WarehouseAdapter {
      * @param warehousePageQry 仓库分页查询
      * @return
      */
-    @Operation(summary = "")
+    @Operation(summary = "仓库列表")
     @GetMapping("/list/{projectKey}")
     PageResponse<WarehouseDTO> list(@Parameter(description = "项目唯一标识") @Valid @PathVariable("projectKey") String projectKey, @Parameter(description = "") @Valid WarehousePageQry warehousePageQry);
 
@@ -42,17 +44,18 @@ public interface WarehouseAdapter {
      * @param warehouseAddCmd 仓库新增参数
      * @return {@link Response}
      */
-    @Operation(summary = "")
+    @Operation(summary = "新增仓库")
     @PostMapping("/add")
-    Response add(@Parameter(description = "") @RequestBody WarehouseAddCmd warehouseAddCmd);
+    Response add(@Parameter(description = "新增仓库") @RequestBody WarehouseAddCmd warehouseAddCmd);
 
     /**
-     * 注册信息/导入仓库
+     * 逻辑仓库选项
      *
-     * @param warehouseImportCmd 仓库登记/导入功能
-     * @return {@link Response}
+     * @param projectKey 项目唯一标识
+     * @return {@link SingleResponse<List<WarehouseSelectDTO>>}
      */
-    @Operation(summary = "")
-    @PostMapping("/import")
-    Response warehouseImport(@Parameter(description = "") @RequestBody WarehouseImportCmd warehouseImportCmd);
+    @Operation(summary = "逻辑仓库选项")
+    @GetMapping("/select/{projectKey}")
+    SingleResponse<List<WarehouseSelectDTO>> select(@Parameter(description = "项目唯一标识") @Valid @PathVariable("projectKey") String projectKey);
+
 }

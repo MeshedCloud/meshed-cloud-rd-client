@@ -22,6 +22,10 @@ public enum VersionTypeEnum {
      * 镜像
      */
     IMAGES(2, "images"),
+    /**
+     * 镜像
+     */
+    PAGE(3, "page"),
 
     ;
 

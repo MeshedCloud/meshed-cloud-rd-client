@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * <h1>仓库类型</h1>
+ * <h1></h1>
  *
  * @author Vincent Vic
  * @version 1.0
@@ -13,27 +13,17 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @ToString
-public enum WarehousePurposeTypeEnum {
+public enum EnvironmentEnum {
+
     /**
-     * 服务
+     * 快照发布
      */
-    SERVICE(1, "IMAGES"),
+    SNAPSHOT(1, "snapshot"),
+
     /**
-     * 前端
+     * 正式发布
      */
-    PAGE(2, "PAGE"),
-    /**
-     * 控制台
-     */
-    CONSOLE(3, "PAGE"),
-    /**
-     * 客户端
-     */
-    CLIENT(4, "MAVEN"),
-    /**
-     * 组件
-     */
-    ASSEMBLY(5, "MAVEN"),
+    RELEASE(2, "release"),
 
     ;
 
