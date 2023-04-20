@@ -1,5 +1,6 @@
 package cn.meshed.cloud.rd.deployment.enums;
 
+import com.baomidou.mybatisplus.annotation.EnumValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -24,12 +25,10 @@ public enum PublishTypeEnum {
      * 服务 (子维度)
      */
     SERVICE(2,"SERVICE"),
-
-
-
     ;
 
+    @EnumValue
     private final int value;
-    private final String key;
+    private final String ext;
 
 }

@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -41,7 +41,7 @@ public interface DomainAdapter {
      * @return {@link Response}
      */
     @Operation(summary = "领域新增")
-    @PostMapping("/add")
+    @PutMapping("/add")
     Response add(@Parameter(description = "新增参数") @Valid @RequestBody DomainCmd domainCmd);
 
     /**

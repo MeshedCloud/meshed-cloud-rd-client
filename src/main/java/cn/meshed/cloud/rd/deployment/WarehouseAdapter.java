@@ -4,6 +4,7 @@ import cn.meshed.cloud.rd.deployment.command.WarehouseAddCmd;
 import cn.meshed.cloud.rd.deployment.data.WarehouseDTO;
 import cn.meshed.cloud.rd.deployment.data.WarehouseSelectDTO;
 import cn.meshed.cloud.rd.deployment.query.WarehousePageQry;
+import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.cola.dto.PageResponse;
 import com.alibaba.cola.dto.Response;
 import com.alibaba.cola.dto.SingleResponse;
@@ -52,10 +53,10 @@ public interface WarehouseAdapter {
      * 逻辑仓库选项
      *
      * @param projectKey 项目唯一标识
-     * @return {@link SingleResponse<List<WarehouseSelectDTO>>}
+     * @return {@link MultiResponse<WarehouseSelectDTO>}
      */
     @Operation(summary = "逻辑仓库选项")
     @GetMapping("/select/{projectKey}")
-    SingleResponse<List<WarehouseSelectDTO>> select(@Parameter(description = "项目唯一标识") @Valid @PathVariable("projectKey") String projectKey);
+    MultiResponse<WarehouseSelectDTO> select(@Parameter(description = "项目唯一标识") @Valid @PathVariable("projectKey") String projectKey);
 
 }

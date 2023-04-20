@@ -1,5 +1,6 @@
 package cn.meshed.cloud.rd.project.enums;
 
+import com.baomidou.mybatisplus.annotation.EnumValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -28,6 +29,7 @@ public enum ProjectVisitTypeEnum {
     OWNER(3, "owner"),
     ;
 
+    @EnumValue
     private final int value;
-    private final String key;
+    private final String ext;
 }

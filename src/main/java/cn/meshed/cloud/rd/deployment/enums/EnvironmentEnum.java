@@ -1,5 +1,6 @@
 package cn.meshed.cloud.rd.deployment.enums;
 
+import com.baomidou.mybatisplus.annotation.EnumValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -27,6 +28,7 @@ public enum EnvironmentEnum {
 
     ;
 
+    @EnumValue
     private final int value;
-    private final String key;
+    private final String ext;
 }

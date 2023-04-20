@@ -37,4 +37,9 @@ public class ModelDetailDTO extends ModelDTO {
      */
     @Schema(description = "字段列表")
     private List<RequestFieldDTO> fields;
+    /**
+     * 相应枚举信息列表
+     */
+    @Schema(description = "相应枚举信息列表")
+    private List<EnumValueDTO> enumValues;
 }

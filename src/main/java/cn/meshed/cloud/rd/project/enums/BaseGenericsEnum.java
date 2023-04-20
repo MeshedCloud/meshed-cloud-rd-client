@@ -1,5 +1,6 @@
 package cn.meshed.cloud.rd.project.enums;
 
+import com.baomidou.mybatisplus.annotation.EnumValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -36,8 +37,15 @@ public enum BaseGenericsEnum {
      */
     JSON(4, "json");
 
+    /**
+     * 存储值
+     */
+    @EnumValue
     private final int value;
-    private final String key;
+    /**
+     * 扩展
+     */
+    private final String ext;
 
 
 }

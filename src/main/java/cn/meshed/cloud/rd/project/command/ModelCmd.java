@@ -1,5 +1,6 @@
 package cn.meshed.cloud.rd.project.command;
 
+import cn.meshed.cloud.rd.project.data.EnumValueDTO;
 import cn.meshed.cloud.rd.project.data.RequestFieldDTO;
 import cn.meshed.cloud.rd.project.enums.ModelTypeEnum;
 import cn.meshed.cloud.rd.project.enums.OperateEnum;
@@ -11,6 +12,7 @@ import lombok.EqualsAndHashCode;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Set;
 
 /**
  * <h1>模型操作模型</h1>
@@ -80,5 +82,10 @@ public class ModelCmd extends Command {
      */
     @Schema(description = "模型字段")
     private List<RequestFieldDTO> fields;
+
+    /**
+     * 相应枚举信息列表，仅在枚举类型
+     */
+    private List<EnumValueDTO> enumValues;
 
 }

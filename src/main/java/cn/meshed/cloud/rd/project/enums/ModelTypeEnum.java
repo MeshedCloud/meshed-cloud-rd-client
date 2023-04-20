@@ -1,5 +1,6 @@
 package cn.meshed.cloud.rd.project.enums;
 
+import com.baomidou.mybatisplus.annotation.EnumValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -30,7 +31,7 @@ public enum ModelTypeEnum {
     /**
      * 枚举模型
      */
-    ENUMS(4, "Enum"),
+    ENUM(4, "Enum"),
     /**
      * 事件模型
      */
@@ -62,6 +63,7 @@ public enum ModelTypeEnum {
 
     ;
 
+    @EnumValue
     private final int value;
-    private final String key;
+    private final String ext;
 }
