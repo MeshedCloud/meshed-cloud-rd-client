@@ -1,11 +1,14 @@
 package cn.meshed.cloud.rd.deployment.data;
 
+import cn.meshed.cloud.rd.deployment.enums.EnvironmentEnum;
 import cn.meshed.cloud.rd.deployment.enums.VersionStatusEnum;
 import cn.meshed.cloud.rd.deployment.enums.VersionTypeEnum;
 import com.alibaba.cola.dto.DTO;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.util.List;
 
 /**
  * <h1>版本传输数据模型</h1>
@@ -39,7 +42,7 @@ public class VersionDTO extends DTO {
     /**
      * 环境
      */
-    private String environment;
+    private List<EnvironmentEnum> environments;
     /**
      * 版本
      */

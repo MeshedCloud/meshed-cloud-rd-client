@@ -45,4 +45,19 @@ public class VersionPublishEvent extends SecurityEvent {
      */
     private EnvironmentEnum environment;
 
+    /**
+     *  类型名称
+     */
+    private String typeName;
+
+    /**
+     *  发布名称
+     */
+    private String publishName;
+
+    /**
+     *  版本号
+     */
+    private String version;
+
 }

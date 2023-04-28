@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * <h1>Jar 发行状态</h1>
+ * <h1></h1>
  *
  * @author Vincent Vic
  * @version 1.0
@@ -14,37 +14,18 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @ToString
-public enum ReleaseStatusEnum {
-
-
+public enum ServiceModelTypeEnum {
     /**
-     * 编辑中
+     * 模型
      */
-    EDIT(1, "edit"),
+    MODEL(1, "MODEL"),
     /**
-     * 待发布
+     * 服务
      */
-    PROCESSING(2, "processing"),
-
-    /**
-     * 快照发布
-     */
-    SNAPSHOT(3, "snapshot"),
-
-    /**
-     * 正式发布
-     */
-    RELEASE(4, "release"),
-
-    /**
-     * 废弃
-     */
-    DISCARD(4, "discard"),
-
+    SERVICE(2, "SERVICE"),
     ;
 
     @EnumValue
     private final int value;
     private final String ext;
-
 }

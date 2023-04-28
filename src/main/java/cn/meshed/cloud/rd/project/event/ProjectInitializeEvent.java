@@ -65,6 +65,7 @@ public class ProjectInitializeEvent extends SecurityEvent {
     /**
      * 描述
      */
+    @Schema(description = "描述")
     private String description;
 
 }

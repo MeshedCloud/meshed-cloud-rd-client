@@ -12,6 +12,7 @@ import com.alibaba.cola.dto.Response;
 import com.alibaba.cola.dto.SingleResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -54,7 +55,7 @@ public interface ModelAdapter {
     /**
      * 保存功能
      *
-     * @param modelCmd 服务数据
+     * @param modelCmd 模型数据
      * @return {@link Response}
      */
     @Operation(summary = "模型保存")
@@ -91,4 +92,43 @@ public interface ModelAdapter {
     @GetMapping("/release/count/{projectKey}")
     SingleResponse<ModelReleaseCountDTO> releaseCount(@Parameter(description = "项目唯一标识") @PathVariable("projectKey") String projectKey);
 
+    /**
+     * 完成模型
+     *
+     * @param uuid 模型编码
+     * @return {@link Response}
+     */
+    @Operation(summary = "完成模型")
+    @PostMapping("/complete/{uuid}")
+    Response complete(@Parameter(description = "UUID") @PathVariable("uuid") String uuid);
+
+    /**
+     * 撤销完成
+     *
+     * @param uuid 模型编码
+     * @return {@link Response}
+     */
+    @Operation(summary = "撤销完成")
+    @PostMapping("/revoke/{uuid}")
+    Response revoke(@Parameter(description = "UUID") @PathVariable("uuid") String uuid);
+
+    /**
+     * 废弃
+     *
+     * @param uuid 模型编码
+     * @return {@link Response}
+     */
+    @Operation(summary = "废弃")
+    @PostMapping("/discard/{uuid}")
+    Response discard(@Parameter(description = "UUID") @PathVariable("uuid") String uuid);
+
+    /**
+     * 删除（仅支持编辑中的模型）
+     *
+     * @param uuid 模型编码
+     * @return {@link Response}
+     */
+    @Operation(summary = "删除（仅支持编辑中的模型）")
+    @DeleteMapping("/delete/{uuid}")
+    Response delete(@Parameter(description = "UUID") @PathVariable("uuid") String uuid);
 }

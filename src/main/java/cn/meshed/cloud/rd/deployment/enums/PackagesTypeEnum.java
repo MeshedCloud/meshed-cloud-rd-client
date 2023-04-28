@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * <h1>发布类型</h1>
+ * <h1>制品类型</h1>
  *
  * @author Vincent Vic
  * @version 1.0
@@ -14,21 +14,15 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @ToString
-public enum PublishTypeEnum {
-
+public enum PackagesTypeEnum {
     /**
-     * 客户端 (主维度)
+     * 制品库
      */
-    CLIENT(1,"客户端"),
+    MAVEN(1, "maven"),
 
-    /**
-     * 服务 (子维度)
-     */
-    SERVICE(2,"服务"),
     ;
 
     @EnumValue
     private final int value;
     private final String ext;
-
 }

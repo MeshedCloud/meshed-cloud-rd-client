@@ -40,7 +40,7 @@ public enum VersionStatusEnum {
      */
     DEPLOYMENT_FAILED(6, "deployment_failed"),
     /**
-     * 部署失败
+     * 拒绝
      */
     REJECT(7, "reject"),
     ;
