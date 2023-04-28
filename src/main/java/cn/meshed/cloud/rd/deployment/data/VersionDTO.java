@@ -43,6 +43,7 @@ public class VersionDTO extends DTO {
      * 环境
      */
     private List<EnvironmentEnum> environments;
+    
     /**
      * 版本
      */

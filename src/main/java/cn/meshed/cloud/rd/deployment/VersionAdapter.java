@@ -44,6 +44,7 @@ public interface VersionAdapter {
     @Operation(summary = "发布版本")
     @PostMapping("/publish")
     Response publish(@Parameter(description = "发布版本参数") @Valid @RequestBody VersionCmd versionCmd);
+
     /**
      * 发布版本
      *
