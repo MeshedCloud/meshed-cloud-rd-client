@@ -1,24 +1,24 @@
-package cn.meshed.cloud.rd.deployment.data;
+package cn.meshed.cloud.rd.repo.data;
 
+import cn.meshed.cloud.rd.deployment.enums.WarehouseAccessModeEnum;
 import cn.meshed.cloud.rd.deployment.enums.WarehousePurposeTypeEnum;
 import cn.meshed.cloud.rd.deployment.enums.WarehouseRelationEnum;
 import cn.meshed.cloud.rd.deployment.enums.WarehouseRepoTypeEnum;
 import cn.meshed.cloud.rd.deployment.enums.WarehouseStatusEnum;
-import com.alibaba.cola.dto.DTO;
-import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AccessLevel;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Setter;
+
+import java.util.List;
 
 /**
- * <h1>仓库传输数据模型</h1>
+ * <h1>仓库文件树</h1>
  *
  * @author Vincent Vic
  * @version 1.0
  */
-@EqualsAndHashCode(callSuper = false)
 @Data
-@Schema(description = "仓库传输数据模型")
-public class WarehouseDTO extends DTO {
+public class RepositoryDTO {
 
     /**
      * uuid
@@ -29,12 +29,10 @@ public class WarehouseDTO extends DTO {
      * repositoryId
      */
     private String repoId;
-
     /**
      * 中文名称
      */
     private String name;
-
     /**
      * 仓库名称
      */
@@ -63,16 +61,37 @@ public class WarehouseDTO extends DTO {
     /**
      * 仓库版本号
      */
-    private String version;
+    private Long version;
 
     /**
      * 仓库负责人ID
      */
-    private Long owner;
+    private Long ownerId;
+
+    /**
+     * 仓库访问模式
+     */
+    private WarehouseAccessModeEnum accessMode;
+
+    /**
+     * 仓库所属项目key
+     */
+    private String projectKey;
+
+    /**
+     * 仓库描述
+     */
+    private String description;
 
     /**
      * 仓库状态
      */
     private WarehouseStatusEnum status;
+
+    /**
+     * 分支
+     */
+    private List<String> branchs;
+
 
 }

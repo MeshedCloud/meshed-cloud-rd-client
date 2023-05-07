@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <h1>项目动态</h1>
@@ -44,5 +45,5 @@ public class TrendDTO implements Serializable {
     /**
      * 创建时间
      */
-    private LocalDateTime time;
+    private Date time;
 }
