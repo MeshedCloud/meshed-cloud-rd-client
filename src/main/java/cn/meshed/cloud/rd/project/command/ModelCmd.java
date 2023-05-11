@@ -45,7 +45,6 @@ public class ModelCmd extends Command {
      * 模型父类
      */
     @Schema(description = "模型父类")
-    @NotBlank(message = "模型父类不能为空")
     private String superClass;
     /**
      * 领域
