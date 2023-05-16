@@ -38,6 +38,16 @@ public interface ServiceGroupAdapter {
     SingleResponse<Set<ServiceGroupSelectDTO>> select(@Parameter(description = "项目唯一标识") @PathVariable("projectKey") String projectKey);
 
     /**
+     * 服务分组查询信息
+     *
+     * @param uuid uuid
+     * @return {@link SingleResponse< List <ServiceGroupDTO>>}
+     */
+    @Operation(summary = "服务分组查询信息")
+    @GetMapping("/query/{uuid}")
+    SingleResponse<ServiceGroupDTO> query(@Parameter(description = "项目唯一标识") @PathVariable("uuid") String uuid);
+
+    /**
      * 保存功能
      *
      * @param serviceGroupCmd 服务分组数据
